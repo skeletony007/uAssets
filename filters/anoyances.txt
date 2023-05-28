@@ -1,0 +1,30 @@
+! Title: Skeletony 007 filters - Annoyances
+! Description: |
+!   Filters optimized for uBlock Origin, to be used with Fanboy's, Adguard's, 
+!   uBlock filters' "Annoyances" list(s)
+! Update URL: Update URL goes here!
+! Homepage: Homepage goes here!
+
+! https://www.youtube.com
+! YT consent
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.conse
+youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.
+youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpR
+youtube.com##+js(set, ytInitialData.onResponseReceivedEndpoints, undefined)
+! YT consent v2 (source:  https://www.reddit.com/r/uBlockOrigin/wiki/solutions#wiki
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.conse
+youtube.com##+js(json-prune, [].response.overlay.consentBumpV2Renderer topbar.deskt
+
+! https://open.spotify.com
+!   desktop app references
+!     install app button
+open.spotify.com##a[href="/download"]
+!     context menu & hamburger menu [dynamic]
+open.spotify.com##li:has(button > span:has-text("Open in Desktop app"))
+!   privacy
+!     search history
+open.spotify.com##section[aria-label="Recent searches"]
+!     liked artists in library & general consistency
+open.spotify.com##ul[aria-label="Your Library"] > div > div > li:not(:has(div > div:matches-attr(id="/onClickHintspotify:(playlist|user).*/")))
+open.spotify.com##div[aria-label="Filter options"]
+
