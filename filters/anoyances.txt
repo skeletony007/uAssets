@@ -2,8 +2,8 @@
 ! Description: |
 !   Filters optimized for uBlock Origin, to be used with Fanboy's, Adguard's, 
 !   uBlock filters' "Annoyances" list(s)
-! Update URL: Update URL goes here!
-! Homepage: Homepage goes here!
+! Update URL: https://raw.githubusercontent.com/skeletony007/uAssets/main/filters/anoyances.txt
+! Homepage: https://github.com/skeletony007/uAssets
 
 ! https://www.youtube.com
 ! YT consent
