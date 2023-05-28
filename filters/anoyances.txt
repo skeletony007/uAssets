@@ -7,7 +7,8 @@
 ! Homepage: https://github.com/skeletony007/uAssets
 
 ! https://www.youtube.com
-! YT consent\nyoutube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
+! YT consent
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
 youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
 youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
 youtube.com##+js(set, ytInitialData.onResponseReceivedEndpoints, undefined)
