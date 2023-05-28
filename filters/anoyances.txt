@@ -7,14 +7,13 @@
 ! Homepage: https://github.com/skeletony007/uAssets
 
 ! https://www.youtube.com
-! YT consent
-youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.conse
-youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.
-youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpR
+! YT consent\nyoutube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
+youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
+youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
 youtube.com##+js(set, ytInitialData.onResponseReceivedEndpoints, undefined)
-! YT consent v2 (source:  https://www.reddit.com/r/uBlockOrigin/wiki/solutions#wiki
-youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.conse
-youtube.com##+js(json-prune, [].response.overlay.consentBumpV2Renderer topbar.deskt
+! YT consent v2 (source:  https://www.reddit.com/r/uBlockOrigin/wiki/solutions#wiki_consent_dialog)
+youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+youtube.com##+js(json-prune, [].response.overlay.consentBumpV2Renderer topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer overlay.consentBumpV2Renderer response.overlay.consentBumpV2Renderer)
 
 ! https://open.spotify.com
 !   desktop app references
