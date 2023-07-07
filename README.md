@@ -18,10 +18,6 @@ Stored in the `filters` folder.
 
 <p><sup>note: images have been edited for simplicity and are references to the <a href="https://github.com/arkenfox/user.js/wiki/4.1-Extensions" rel="nofollow">arkenfox/user.js Wiki</a></sup></p>
 
-### Rules
-
-List of your dynamic filtering rules. [https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-rule-syntax](https://github.com/gorhill/uBlock/wiki/Dynamic-filtering:-rule-syntax)
-
 #### Examples
 
 See [https://github.com/uBlockOrigin/uAssets](https://github.com/uBlockOrigin/uAssets).
