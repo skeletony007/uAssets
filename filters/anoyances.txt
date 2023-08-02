@@ -28,4 +28,5 @@ open.spotify.com##section[aria-label="Recent searches"]
 !     liked artists in library & general consistency
 open.spotify.com##ul[aria-label="Your Library"] > div > div > li:not(:has(div > div:matches-attr(id="/onClickHintspotify:(playlist|user).*/")))
 open.spotify.com##div[aria-label="Filter options"]
-
+!   tips
+open.spotify.com##.tippy-box
