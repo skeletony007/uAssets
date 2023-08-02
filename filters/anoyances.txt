@@ -30,3 +30,8 @@ open.spotify.com##ul[aria-label="Your Library"] > div > div > li:not(:has(div > 
 open.spotify.com##div[aria-label="Filter options"]
 !   tips
 open.spotify.com##.tippy-box
+
+! https://www.reddit.com
+!   interests
+www.reddit.com##._1acwN_tUhJ8w-n7oCp-Aw3._199HcTqT2ANvw-1B0onPUa._1DK52RbaamLOWw5UPaht_S
+
