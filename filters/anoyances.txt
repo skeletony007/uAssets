@@ -1,37 +1,88 @@
 ! Title: Skeletony_007 filters - Annoyances
 ! Description: |
-!   Filters optimized for uBlock Origin, to be used with Fanboy's, Adguard's, 
-!   uBlock filters' "Annoyances" list(s)
+!   Filters optimized for uBlock Origin.
+!   Sources:
+!   - https://www.reddit.com/r/uBlockOrigin/wiki/solutions/
 ! Expires: 30 days (update frequency)
 ! Update URL: https://raw.githubusercontent.com/skeletony007/uAssets/main/filters/anoyances.txt
 ! Homepage: https://github.com/skeletony007/uAssets
 
-! https://www.youtube.com
+! https://www.youtube.com #consent-dialogue
+
 ! YT consent
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer.forceConsent, false)
 youtube.com##+js(json-prune, [].response.topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
 youtube.com##+js(json-prune, topbar.desktopTopbarRenderer.interstitial.consentBumpRenderer)
+
+! 2021-12-01: When specific videos redirect persistently to consent page try this filter (discussion: https://redd.it/r3ec5x ):
 youtube.com##+js(set, ytInitialData.onResponseReceivedEndpoints, undefined)
-! YT consent v2 (source:  https://www.reddit.com/r/uBlockOrigin/wiki/solutions#wiki_consent_dialog)
+
+! 2021-12-14 YT consent v2 https://github.com/uBlockOrigin/uAssets/issues/7636#issuecomment-992858673
 youtube.com##+js(set, ytInitialData.topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
 youtube.com##+js(json-prune, [].response.overlay.consentBumpV2Renderer topbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer overlay.consentBumpV2Renderer response.overlay.consentBumpV2Renderer)
 
-! https://open.spotify.com
-!   desktop app references
-!     install app button
+! 2022-10-16 when navigating directly to #shorts
+youtube.com##+js(set, ytInitialData.desktopTopbar.desktopTopbarRenderer.interstitial.consentBumpV2Renderer, undefined)
+
+! https://www.youtube.com #shorts
+
+! YT Homepage and Subscriptions - Hide the Shorts section
+youtube.com##[is-shorts]
+! YT Menu - Hide the Shorts button
+www.youtube.com###guide [title="Shorts"], .ytd-mini-guide-entry-renderer[title="Shorts"]
+! YT Search - Hide Shorts
+www.youtube.com##ytd-search ytd-video-renderer:has([overlay-style="SHORTS"])
+! YT Search, Channels and Sidebar or below the player - Hide the Shorts sections
+www.youtube.com##ytd-reel-shelf-renderer
+! YT Channels - Hide the Shorts tab
+www.youtube.com##[tab-title="Shorts"]
+! YT Subscriptions - Hide Shorts - Grid View
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+! YT Subscriptions - Hide Shorts - List View
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer:has([overlay-style="SHORTS"])
+! YT Subscriptions - New Layout - Hide Shorts
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+! YT Sidebar - Hide Shorts
+www.youtube.com###related ytd-compact-video-renderer:has([overlay-style="SHORTS"])
+
+! YT Mobile - Hide the Shorts Menu button
+m.youtube.com##.pivot-shorts:upward(ytm-pivot-bar-item-renderer)
+! YT Mobile - Hide Shorts sections
+m.youtube.com##ytm-reel-shelf-renderer
+! YT Mobile - Hide Shorts in search results
+m.youtube.com##ytm-search ytm-video-with-context-renderer [data-style="SHORTS"]
+
+! https://www.youtube.com #search-page-without-bloat
+
+! YT Search - keep only videos
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer),ytd-secondary-search-container-renderer
+
+! YT Search - keep videos and channels
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
+
+! https://www.youtube.com #video-annotations
+
+/annotations_module.js$script,important,domain=youtube.com
+/endscreen.js$script,important,domain=youtube.com
+
+! https://open.spotify.com #desktop-app-references
+
+! install app button
 open.spotify.com##a[href="/download"]
-!     context menu & hamburger menu [dynamic]
+! context menu & hamburger menu [dynamic]
 open.spotify.com##li:has(button > span:has-text("Open in Desktop app"))
-!   privacy
-!     search history
+
+! https://open.spotify.com #privacy
+
+! search history
 open.spotify.com##section[aria-label="Recent searches"]
-!     liked artists in library & general consistency
+! liked artists in library & general consistency
 open.spotify.com##ul[aria-label="Your Library"] > div > div > li:not(:has(div > div:matches-attr(id="/onClickHintspotify:(playlist|user).*/")))
 open.spotify.com##div[aria-label="Filter options"]
-!   tips
+
+! https://open.spotify.com #tips
+
 open.spotify.com##.tippy-box
 
-! https://www.reddit.com
-!   interests
+! https://www.reddit.com #interests-popiup
 www.reddit.com##._1acwN_tUhJ8w-n7oCp-Aw3._199HcTqT2ANvw-1B0onPUa._1DK52RbaamLOWw5UPaht_S
-
