@@ -1,6 +1,6 @@
 # uAssets
 
-This repository is for my deployment of [uBlock Origin (uBO)](https://github.com/gorhill/uBlock).
+This repository is for my deployment of [uBlock Origin (uBO)].
 
 ## Usage
 
@@ -10,8 +10,8 @@ Stored in the `filters` folder.
 
 | Filter List |
 | --- |
-| [Skeletony_007 filters - Annoyances](https://raw.githubusercontent.com/skeletony007/uAssets/main/filters/anoyances.txt) \| <sup>⚪️ this repo</sup> |
-| [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/) \| <sup>🏠 <a href="https://www.i-dont-care-about-cookies.eu/">homepage</a></sup> |
+| [Skeletony_007 filters - Annoyances] \| <sup>⚪️ this repo</sup> |
+| [I don't care about cookies] \| <sup>🏠 <a href="https://www.i-dont-care-about-cookies.eu/">homepage</a></sup> |
 
 - Open the uBlock Origin Extension and import<sup>1</sup> your desired filter lists
 - > <details><summary>click me for details</summary><p></p><ul><li>Check <code>Import</code> under <code>Filter Lists &gt; Custom</code></li><li>Paste in the linked URLs from the table above</li><li>Click <code>Apply Changes</code></li></ul><p><img src="https://github.com/arkenfox/user.js/raw/master/wikipiki/uboCustom.png" alt=""></p></details>
@@ -20,4 +20,8 @@ Stored in the `filters` folder.
 
 #### Examples
 
-See [https://github.com/uBlockOrigin/uAssets](https://github.com/uBlockOrigin/uAssets).
+See <https://github.com/uBlockOrigin/uAssets>.
+
+[uBlock Origin (uBO)]: https://github.com/gorhill/uBlock
+[I don't care about cookies]: https://www.i-dont-care-about-cookies.eu/abp/
+[Skeletony_007 filters - Annoyances]: https://raw.githubusercontent.com/skeletony007/uAssets/main/filters/anoyances.txt
