@@ -83,7 +83,7 @@ open.spotify.com##li:has(button > span:has-text("Open in Desktop app"))
 ! https://open.spotify.com #privacy
 
 ! search history
-open.spotify.com##section[aria-label="Recent searches"]
+open.spotify.com##div#recent-searches-dropdown
 ! liked artists in library & general consistency
 open.spotify.com##ul[aria-label="Your Library"] > div > div > li:not(:has(div > div:matches-attr(id="/onClickHintspotify:(playlist|user).*/")))
 open.spotify.com##div[aria-label="Filter options"]
@@ -91,6 +91,10 @@ open.spotify.com##div[aria-label="Filter options"]
 ! https://open.spotify.com #tips
 
 open.spotify.com##.tippy-box
+
+! https://open.spotify.com #unused-buttons
+
+open.spotify.com##div[aria-label="Home"]
 
 ! https://www.reddit.com #interests-popiup
 www.reddit.com##._1acwN_tUhJ8w-n7oCp-Aw3._199HcTqT2ANvw-1B0onPUa._1DK52RbaamLOWw5UPaht_S
