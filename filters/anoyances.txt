@@ -26,75 +26,43 @@ youtube.com##+js(set, ytInitialData.desktopTopbar.desktopTopbarRenderer.intersti
 
 ! https://www.youtube.com #shorts
 
-! YT Homepage and Subscriptions - Hide the Shorts section
+! YT Homepage and Subscriptions (Grid View) - Hide the Shorts section
 youtube.com##[is-shorts]
 ! YT Menu - Hide the Shorts button
 www.youtube.com###guide [title="Shorts"], .ytd-mini-guide-entry-renderer[title="Shorts"]
 ! YT Search - Hide Shorts
-www.youtube.com##ytd-search ytd-video-renderer:has([overlay-style="SHORTS"])
-! YT Search, Channels and Sidebar or below the player - Hide the Shorts sections
+www.youtube.com##ytd-search ytd-video-renderer:has([overlay-style="SHORTS"],[href^="/shorts/"])
+! YT Search, Channels, Subscriptions (List View) and Sidebar/Below Player Recommendations - Hide the Shorts sections
 www.youtube.com##ytd-reel-shelf-renderer
 ! YT Channels - Hide the Shorts tab
 www.youtube.com##[tab-title="Shorts"]
 ! YT Subscriptions - Hide Shorts - Grid View
-www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer:has([overlay-style="SHORTS"])
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-grid-video-renderer:has([overlay-style="SHORTS"],[href^="/shorts/"])
 ! YT Subscriptions - Hide Shorts - List View
-www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer:has([overlay-style="SHORTS"])
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-video-renderer:has([overlay-style="SHORTS"],[href^="/shorts/"])
 ! YT Subscriptions - New Layout - Hide Shorts
-www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer:has([overlay-style="SHORTS"])
+www.youtube.com##ytd-browse[page-subtype="subscriptions"] ytd-rich-item-renderer:has([overlay-style="SHORTS"],[href^="/shorts/"])
 ! YT Sidebar - Hide Shorts
-www.youtube.com###related ytd-compact-video-renderer:has([overlay-style="SHORTS"])
+www.youtube.com###related :is(ytd-compact-video-renderer,yt-lockup-view-model):has([overlay-style="SHORTS"],[href^="/shorts/"])
 
 ! YT Mobile - Hide the Shorts Menu button
-m.youtube.com##.pivot-shorts:upward(ytm-pivot-bar-item-renderer)
-! YT Mobile - Hide Shorts sections
+m.youtube.com##ytm-pivot-bar-item-renderer:has(>.pivot-shorts)
+! YT Mobile - Hide the Shorts sections
 m.youtube.com##ytm-reel-shelf-renderer
+m.youtube.com##ytm-rich-section-renderer:has([d^="M17.77,10.32l-1.2"])
 ! YT Mobile - Hide Shorts in search results
-m.youtube.com##ytm-search ytm-video-with-context-renderer [data-style="SHORTS"]
+m.youtube.com##ytm-search ytm-video-with-context-renderer:has([data-style="SHORTS"])
+! YT Mobile - Hide the Shorts button on Channels
+m.youtube.com##[tab-title="Shorts"]
 
 ! https://www.youtube.com #search-page-without-bloat
 
-! YT Search - keep only videos
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer),ytd-secondary-search-container-renderer
+! YT Search - keep only videos (no shorts), channels and playlists
+youtube.com##ytd-search ytd-item-section-renderer>#contents>:is(:not(ytd-video-renderer,ytd-channel-renderer,ytd-playlist-renderer,yt-lockup-view-model,yt-showing-results-for-renderer,[icon-name="promo-full-height:EMPTY_SEARCH"]),ytd-video-renderer:has([aria-label="Shorts"])),ytd-secondary-search-container-renderer
 
-! YT Search - keep videos and channels
-youtube.com##ytd-search ytd-item-section-renderer>#contents>:not(ytd-video-renderer,ytd-channel-renderer),ytd-secondary-search-container-renderer
+! https://www.youtube.com #suggested-videos
 
-! https://www.youtube.com #video-annotations
-
-/annotations_module.js$script,important,domain=youtube.com
-/endscreen.js$script,important,domain=youtube.com
-
-! https://www.youtube.com #homepage
-
-wwww.youtube.com##ytd-browse[page-subtype="home"]
-
-! https://www.youtube.com #related
-
-wwww.youtube.com###related
-
-! https://open.spotify.com #desktop-app-references
-
-! install app button
-open.spotify.com##a[href="/download"]
-! context menu & hamburger menu [dynamic]
-open.spotify.com##li:has(button > span:has-text("Open in Desktop app"))
-
-! https://open.spotify.com #privacy
-
-! search history
-open.spotify.com##div#recent-searches-dropdown
-! liked artists in library & general consistency
-open.spotify.com##ul[aria-label="Your Library"] > div > div > li:not(:has(div > div:matches-attr(id="/onClickHintspotify:(playlist|user).*/")))
-open.spotify.com##div[aria-label="Filter options"]
-
-! https://open.spotify.com #tips
-
-open.spotify.com##.tippy-box
-
-! https://open.spotify.com #unused-buttons
-
-open.spotify.com##div[aria-label="Home"]
-
-! https://www.reddit.com #interests-popiup
-www.reddit.com##._1acwN_tUhJ8w-n7oCp-Aw3._199HcTqT2ANvw-1B0onPUa._1DK52RbaamLOWw5UPaht_S
+! YT Home - No Videos
+www.youtube.com##ytd-browse[page-subtype="home"]
+! YT Videos - No Sidebar
+www.youtube.com##ytd-watch-flexy #secondary
